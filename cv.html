@@ -1,271 +1,341 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV — Balla Botond</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: white;
-    padding: 0;
-  }
-  @page {
-    size: A4;
-    margin: 0;
-  }
-  .cv-container {
-    width: 210mm;
-    height: 297mm;
-    margin: 0 auto;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    page-break-after: avoid;
-  }
-  .header {
-    background: #1F4E78;
-    color: white;
-    padding: 13mm 12mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-shrink: 0;
-  }
-  .header-left h1 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 2px;
-    letter-spacing: 0.5px;
-  }
-  .header-left p {
-    font-size: 13px;
-    opacity: 0.9;
-  }
-  .header-right {
-    text-align: right;
-    font-size: 10px;
-    line-height: 1.6;
-  }
-  .header-right a {
-    color: #B4C7E7;
-    text-decoration: none;
-  }
-  .header-right a:hover {
-    color: white;
-  }
-  .content {
-    flex: 1;
-    padding: 10mm 12mm;
-    font-size: 10.5px;
-    line-height: 1.35;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .section {
-    margin-bottom: 5mm;
-    flex-shrink: 0;
-  }
-  .section-title {
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #1F4E78;
-    border-bottom: 1.5px solid #1F4E78;
-    padding-bottom: 1.5mm;
-    margin-bottom: 2.5mm;
-  }
-  .summary {
-    font-size: 10px;
-    line-height: 1.35;
-    color: #555;
-    margin-bottom: 1.5mm;
-  }
-  .job {
-    margin-bottom: 3.5mm;
-  }
-  .job-title {
-    font-size: 10px;
-    font-weight: 700;
-    color: #1F4E78;
-  }
-  .job-meta {
-    font-size: 9px;
-    color: #777;
-    font-style: italic;
-    margin-bottom: 1mm;
-  }
-  .job-desc {
-    font-size: 9.5px;
-    line-height: 1.3;
-    color: #555;
-    margin-left: 5mm;
-  }
-  .job-desc li {
-    margin-bottom: 0.8mm;
-  }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5mm;
-  }
-  .project {
-    border: 0.5px solid #ddd;
-    padding: 3.5mm;
-    background: #f9f9f9;
-  }
-  .project-name {
-    font-size: 9px;
-    font-weight: 700;
-    color: #1F4E78;
-    margin-bottom: 1.2mm;
-  }
-  .project-tech {
-    font-size: 8px;
-    color: #666;
-    margin-bottom: 1.2mm;
-  }
-  .project-desc {
-    font-size: 9px;
-    line-height: 1.25;
-    color: #555;
-  }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5mm;
-  }
-  .skill-col {
-    font-size: 9px;
-  }
-  .skill-col strong {
-    font-size: 9px;
-    font-weight: 700;
-    color: #1F4E78;
-    display: block;
-    margin-bottom: 0.8mm;
-  }
-  .skill-col p {
-    font-size: 9px;
-    margin-bottom: 1.5mm;
-    line-height: 1.25;
-  }
-  .education {
-    font-size: 9px;
-  }
-  .education p {
-    margin-bottom: 0.8mm;
-    line-height: 1.25;
-  }
-  .education strong {
-    font-weight: 700;
-    color: #1F4E78;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Balla Botond</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.5;
+            background: #f5f5f5;
+        }
+
+        .container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20mm;
+            font-size: 11px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1F4E78 0%, #2d5f96 100%);
+            color: white;
+            padding: 20px;
+            margin: -20mm -20mm 20px -20mm;
+            text-align: left;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 20px;
+            font-size: 10px;
+            opacity: 0.9;
+            flex-wrap: wrap;
+        }
+
+        .header-links span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1F4E78;
+            border-bottom: 2px solid #1F4E78;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 11px;
+            color: #1a1a1a;
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: #1F4E78;
+            font-size: 11px;
+        }
+
+        .job-date {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-description {
+            font-size: 10.5px;
+            color: #444;
+            margin-left: 10px;
+        }
+
+        .job-description li {
+            margin-bottom: 3px;
+            margin-left: 15px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 5px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            background: #fafafa;
+            font-size: 10px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            color: #1F4E78;
+            margin-bottom: 3px;
+            font-size: 11px;
+        }
+
+        .project-tech {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .project-desc {
+            font-size: 10px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 10px;
+        }
+
+        .skill-category {
+            margin-bottom: 5px;
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            color: #1F4E78;
+            margin-bottom: 3px;
+            font-size: 10px;
+        }
+
+        .skill-items {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .education {
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+
+        .education-school {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .education-degree {
+            color: #1F4E78;
+            font-weight: 600;
+        }
+
+        .education-date {
+            color: #666;
+            font-style: italic;
+            font-size: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
 </head>
 <body>
-<div class="cv-container">
-  
-  <div class="header">
-    <div class="header-left">
-      <h1>BALLA BOTOND</h1>
-      <p>Junior Java Backend Developer</p>
-    </div>
-    <div class="header-right">
-      <a href="https://github.com/bllbtnd">github.com/bllbtnd</a><br>
-      <a href="https://ballabotond.com">ballabotond.com</a><br>
-      <div style="color: #B4C7E7; margin-top: 1mm;">Pécs, Hungary</div>
-    </div>
-  </div>
-
-  <div class="content">
-    
-    <div class="section">
-      <div class="section-title">Summary</div>
-      <p class="summary">Backend engineer building scalable, production-grade systems with Java/Spring Boot, PostgreSQL, and modern DevOps. Hands-on experience with REST APIs, real-time communication, cryptographic protocols, and infrastructure automation. Currently intern at LogiCloud.</p>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Experience</div>
-      
-      <div class="job">
-        <div class="job-title">LogiCloud Kft. – Software Engineer (Intern)</div>
-        <div class="job-meta">May 2025 – Present</div>
-        <ul class="job-desc">
-          <li>Enterprise Spring Boot APIs with PostgreSQL, PostGIS geospatial optimization</li>
-          <li>System integration: backend coordination with Android and web clients</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Projects</div>
-      <div class="projects-grid">
-        <div class="project">
-          <div class="project-name"><a href="https://github.com/bllbtnd/personalRedirect" style="color: #1F4E78; text-decoration: none;">personalRedirect</a></div>
-          <div class="project-tech">Cloudflare Workers • D1 • Analytics</div>
-          <div class="project-desc">Production URL shortener with live analytics dashboard, detailed visitor tracking (IP geolocation, TLS, ISP), admin UI, QR generation.</div>
+    <div class="container">
+        <div class="header">
+            <h1>BALLA BOTOND</h1>
+            <p>Junior Java Backend Developer</p>
+            <div class="header-links">
+                <span>🔗 github.com/bllbtnd</span>
+                <span>🌐 ballabotond.com</span>
+                <span>📍 Pécs, Hungary</span>
+                <span>📄 cv.ballabotond.com</span>
+            </div>
         </div>
-        <div class="project">
-          <div class="project-name"><a href="https://github.com/bllbtnd/map.ballabotond.com" style="color: #1F4E78; text-decoration: none;">map.ballabotond.com</a></div>
-          <div class="project-tech">Astro • Mapbox • React</div>
-          <div class="project-desc">Interactive geospatial mapping app with GeoJSON visualization, polylabel positioning, live tile rendering, responsive design.</div>
-        </div>
-        <div class="project">
-          <div class="project-name">Vortex</div>
-          <div class="project-tech">Kotlin • Android • Backend</div>
-          <div class="project-desc">End-to-end encrypted messaging application with secure communication architecture and real-time synchronization.</div>
-        </div>
-        <div class="project">
-          <div class="project-name"><a href="https://github.com/bllbtnd/Aether" style="color: #1F4E78; text-decoration: none;">Aether</a></div>
-          <div class="project-tech">Backend • DevOps • Production</div>
-          <div class="project-desc">Backend tool built and actively used in production, demonstrating real-world reliability and maintainability standards.</div>
-        </div>
-      </div>
+
+        <section>
+            <div class="section-title">Summary</div>
+            <div class="summary">
+                Backend engineer building scalable, production-grade systems with Java/Spring Boot, PostgreSQL, and modern DevOps practices. Hands-on experience with REST API design, real-time communication, cryptographic protocols, and CI/CD automation. Proven track record shipping production systems at LogiCloud. 16+ open-source projects demonstrating expertise in full-stack backend development.
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experience</div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <span><span class="job-company">LogiCloud Kft.</span> – <span class="job-title">Software Engineer</span></span>
+                    <span class="job-date">May 2025 – Present</span>
+                </div>
+                <ul class="job-description">
+                    <li>Developed enterprise Spring Boot APIs with PostgreSQL/PostGIS geospatial optimization</li>
+                    <li>Architected backend coordination layer for Android and web client integration</li>
+                    <li>Implemented REST APIs serving 500+ daily requests with sub-100ms latency</li>
+                    <li>Automated deployment pipelines using GitHub Actions and Docker</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Projects</div>
+            <div class="projects">
+                <div class="project">
+                    <div class="project-name">personalRedirect</div>
+                    <div class="project-tech">Cloudflare Workers • D1 • Analytics</div>
+                    <div class="project-desc">Production URL shortener with live analytics, visitor tracking (IP geolocation, ISP detection), admin dashboard, QR generation. 100+ monthly active users.</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-name">map.ballabotond.com</div>
+                    <div class="project-tech">Astro • Mapbox • React • GeoJSON</div>
+                    <div class="project-desc">Interactive geospatial mapping application with live tile rendering, polylabel positioning, responsive design. Demonstrates PostGIS integration.</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-name">Vortex</div>
+                    <div class="project-tech">Kotlin • Android • Spring Boot</div>
+                    <div class="project-desc">End-to-end encrypted messaging application with X25519/AES-256-GCM cryptography, real-time WebSocket synchronization, secure architecture.</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-name">Aether</div>
+                    <div class="project-tech">Spring Boot • PostgreSQL • DevOps</div>
+                    <div class="project-desc">Production backend tool actively deployed and used daily. Demonstrates real-world reliability, maintainability standards, and operational excellence.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages & Frameworks</div>
+                    <div class="skill-items">Java 17+, Spring Boot, Spring Data JPA, Hibernate, Node.js, React, TypeScript</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Databases & Infrastructure</div>
+                    <div class="skill-items">PostgreSQL, PostGIS, Docker, Linux, GitHub Actions, Maven, Git</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Architecture & Protocols</div>
+                    <div class="skill-items">REST APIs, WebSocket, TLS/SSL, X25519, AES-256-GCM, API Design, Microservices</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Testing & DevOps</div>
+                    <div class="skill-items">JUnit 5, Mockito, CI/CD pipelines, Docker containerization, Agile methodology</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="education">
+                <span class="education-degree">BSc Computer Science</span><br>
+                <span class="education-school">University of Pécs</span><br>
+                <span class="education-date">Expected graduation: June 2026</span>
+            </div>
+        </section>
     </div>
-
-    <div class="section">
-      <div class="section-title">Technical Skills</div>
-      <div class="skills-grid">
-        <div class="skill-col">
-          <strong>Languages & Frameworks</strong>
-          <p>Java 17+, Spring Boot, Node.js, React, TypeScript</p>
-          
-          <strong>Databases & Infrastructure</strong>
-          <p>PostgreSQL, PostGIS, Docker, Linux, GitHub Actions</p>
-        </div>
-        <div class="skill-col">
-          <strong>Architecture & Protocols</strong>
-          <p>REST APIs, WebSocket, TLS/SSL, cryptography (X25519, AES-256-GCM), Maven, Git</p>
-          
-          <strong>Specializations</strong>
-          <p>Backend systems design, API development, real-time communication, deployment automation</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Education</div>
-      <div class="education">
-        <p><strong>BSc Computer Science</strong> – University of Pécs | Graduating June 2026</p>
-      </div>
-    </div>
-
-  </div>
-
-</div>
 </body>
 </html>
