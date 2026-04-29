@@ -243,6 +243,31 @@
             showStatus('✓ CV_Balla_Botond.html downloaded');
         }
 
+        function scaleCV() {
+            const wrapper = document.querySelector('.iframe-container');
+            const iframe  = document.getElementById('cvFrame');
+            const cvDoc   = iframe.contentDocument || iframe.contentWindow.document;
+            const cvEl    = cvDoc.querySelector('.cv-container');
+            if (!cvEl) return;
+
+            const naturalW  = cvEl.offsetWidth;
+            const naturalH  = cvEl.offsetHeight;
+            const available = wrapper.clientWidth;
+            const scale     = Math.min(1, available / naturalW);
+
+            cvEl.style.transform       = `scale(${scale})`;
+            cvEl.style.transformOrigin = 'top left';
+            cvDoc.body.style.width     = available + 'px';
+            cvDoc.body.style.height    = (naturalH * scale) + 'px';
+            cvDoc.body.style.overflow  = 'hidden';
+            iframe.style.height        = (naturalH * scale) + 'px';
+            wrapper.style.height       = (naturalH * scale) + 'px';
+        }
+
+        document.getElementById('cvFrame').addEventListener('load', scaleCV);
+        window.addEventListener('load', scaleCV);
+        window.addEventListener('resize', scaleCV);
+
         // Check if files exist on load
         window.addEventListener('load', () => {
             Promise.all([
